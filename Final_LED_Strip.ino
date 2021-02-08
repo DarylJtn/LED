@@ -24,7 +24,7 @@ void setup() {
 void loop() {
   int buttonState = digitalRead(buttonPin); //read the state of the button input
 
-  delay(500);
+  delay(200);
   // put your main code here, to run repeatedly:
   switch (ledType) {
     case 0:
@@ -55,9 +55,26 @@ void loop() {
       if (button) {
         ledType = ledType + 1;
       }
+      break;
     case 4:
       strip.setBrightness(100);
-      button = TwinkleRandom(1, 100, false); 
+      button = TwinkleRandom(1, 10, false);
+      //  bool meteorRain(byte red, byte green, byte blue, byte meteorSize, byte meteorTrailDecay, boolean meteorRandomDecay, int SpeedDelay) {
+      if (button) {
+        ledType = ledType + 1;
+      }
+      break;
+    case 5:
+      strip.setBrightness(80);
+      button = sparkle(50);
+      //  bool meteorRain(byte red, byte green, byte blue, byte meteorSize, byte meteorTrailDecay, boolean meteorRandomDecay, int SpeedDelay) {
+      if (button) {
+        ledType = ledType + 1;
+      }
+      break;
+    case 6:
+      strip.setBrightness(80);
+      button = rgbBreathe(strip.Color(255, 55, 255), 1, 1); //red.
       //  bool meteorRain(byte red, byte green, byte blue, byte meteorSize, byte meteorTrailDecay, boolean meteorRandomDecay, int SpeedDelay) {
       if (button) {
         ledType = ledType + 1;

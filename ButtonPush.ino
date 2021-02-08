@@ -10,3 +10,13 @@ bool ButtonPush() {
   }
 
 }
+
+bool buttonDelay(int ms){
+  int startTime = millis();
+  while(millis() < startTime+ms){
+    if(ButtonPush() == true){
+      return true;
+      }
+    }
+    return false;
+  }
